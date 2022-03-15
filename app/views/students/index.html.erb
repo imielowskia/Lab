@@ -3,12 +3,24 @@
 <h1>Students</h1>
 
 <div id="students">
+  <table class="table">
+  <thead>
+  <tr>
+    <th>Indeks</th>
+    <th>Imię</th>
+    <th>Nazwisko</th>
+    <th>Grupa</th>
+    <th></th>
+  </tr>
+  </thead>
+
   <% @students.each do |student| %>
     <%= render student %>
-    <p>
-      <%= link_to "Show this student", student %>
-    </p>
+
   <% end %>
+    <%= render "form", student: Student.new %>
+  </table>
+
 </div>
 
-<%= link_to "New student", new_student_path %>
+

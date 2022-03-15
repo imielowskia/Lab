@@ -1,24 +1,15 @@
-<div id="<%= dom_id group %>">
-  <p>
-    <strong>Nazwa:</strong>
-    <%= group.nazwa %>
-  </p>
 
-  <p>
-    <strong>Semestr:</strong>
-    <%= group.semestr %>
-  </p>
 
-  <p>
-    <% group.students.each do |s| %>
-      <%= s.indeks %> <%= s.imie %> <%= s.nazwisko %><br>
-    <% end %>
-  </p>
+  <tr>
+    <td><%= group.nazwa %></td>
+    <td><%= group.semestr %></td>
+    <td><% group.students.each do |s| %>
+        <%= s.indeks %> <%= s.imie %> <%= s.nazwisko %><br>
+      <% end %></td>
+    <td><% group.courses.each do |c| %>
+        <%= c.nazwa %>
+      <% end %></td>
+    <td></td>
 
-  <p>
-    <% group.courses.each do |c| %>
-      <%= c.nazwa %>
-    <% end %>
-  </p>
+  </tr>
 
-</div>

@@ -11,27 +11,14 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :indeks, style: "display: block" %>
-    <%= form.text_field :indeks %>
-  </div>
 
-  <div>
-    <%= form.label :imie, style: "display: block" %>
-    <%= form.text_field :imie %>
-  </div>
+      <tr>
+        <td><%= form.text_field :indeks %></td>
+        <td><%= form.text_field :imie %></td>
+        <td><%= form.text_field :nazwisko %></td>
+        <td><%= form.collection_select :group_id, Group.all, :id, :nazwa,{}, {class: "form-select"} %></td>
+        <td><%= form.submit class: "btn btn-primary btn-sm" %></td>
+      </tr>
 
-  <div>
-    <%= form.label :nazwisko, style: "display: block" %>
-    <%= form.text_field :nazwisko %>
-  </div>
 
-  <div>
-    <%= form.label :group_id, style: "display: block" %>
-    <%= form.collection_select :group_id, Group.all, :id, :nazwa %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
 <% end %>

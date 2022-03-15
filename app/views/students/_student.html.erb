@@ -1,22 +1,13 @@
 <div id="<%= dom_id student %>">
-  <p>
-    <strong>Indeks:</strong>
-    <%= student.indeks %>
-  </p>
 
-  <p>
-    <strong>Imie:</strong>
-    <%= student.imie %>
-  </p>
 
-  <p>
-    <strong>Nazwisko:</strong>
-    <%= student.nazwisko %>
-  </p>
+  <tr>
+    <td><%= student.indeks %></td>
+    <td><%= student.imie %></td>
+    <td><%= student.nazwisko %></td>
+    <td><%= student.group.nazwa %></td>
+    <td></td>
+  </tr>
 
-  <p>
-    <strong>Group:</strong>
-    <%= student.group.nazwa %>
-  </p>
 
 </div>

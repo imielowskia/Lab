@@ -11,22 +11,21 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :nazwa, style: "display: block" %>
-    <%= form.text_field :nazwa %>
-  </div>
 
-  <div>
-    <%= form.label :semestr, style: "display: block" %>
-    <%= form.number_field :semestr %>
-  </div>
+  <tr>
+    <td><%= form.text_field :nazwa %></td>
+    <td><%= form.number_field :semestr %></td>
+    <td></td>
+    <td></td>
+    <td> <%= form.submit class: "btn btn-primary" %></td>
+  </tr>
+  <tr>
+    <td colspan="5">
 
-  <div>
-    <%= form.label :courses, style: "display: block" %>
-    <%= form.collection_check_boxes :course_ids, Course.all, :id, :nazwa  %>
-  </div>
+      <%= form.collection_check_boxes :course_ids, Course.all, :id, :nazwa, {}, {class: "form-check form-check-inline"}  %>
+    </td>
+  </tr>
 
-  <div>
-    <%= form.submit %>
-  </div>
+
+
 <% end %>
