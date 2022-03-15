@@ -1,0 +1,19 @@
+<div id="<%= dom_id course %>">
+  <p>
+    <strong>Nazwa:</strong>
+    <%= course.nazwa %>
+  </p>
+
+  <p>
+    <strong>Grupy:</strong>
+    <% course.groups.each do |g| %>
+      <%= g.nazwa %>
+        <p>
+        <% g.students.each do |s| %>
+          <%= s.indeks %> <%= s.imie %> <%= s.nazwisko %><br>
+        <% end %>
+        </p>
+    <% end %>
+  </p>
+
+</div>

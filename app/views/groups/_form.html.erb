@@ -22,6 +22,11 @@
   </div>
 
   <div>
+    <%= form.label :courses, style: "display: block" %>
+    <%= form.collection_check_boxes :course_ids, Course.all, :id, :nazwa  %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
