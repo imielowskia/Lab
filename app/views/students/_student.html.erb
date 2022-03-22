@@ -6,7 +6,8 @@
     <td><%= student.imie %></td>
     <td><%= student.nazwisko %></td>
     <td><%= student.group.nazwa %></td>
-    <td></td>
+    <td><%= link_to "Edycja", edit_student_path(student), remote: true, class: "btn btn-primary btn-sm" %> </td>
+    <td><%= button_to "Usuń", student, method: :delete, class: "btn btn-secondary btn-sm" %></td>
   </tr>
 
 

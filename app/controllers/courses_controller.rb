@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: %i[ show edit update destroy ]
+  before_action :set_course, only: %i[ show edit update destroy oceny ]
 
   # GET /courses or /courses.json
   def index
@@ -17,6 +17,24 @@ class CoursesController < ApplicationController
 
   # GET /courses/1/edit
   def edit
+  end
+
+  #Get /courses/oceny
+  def oceny
+    @group = Group.find(params[:gr_id])
+    @oceny = @course.course_students
+    @students = @group.students
+    if @oceny.count > 0
+    else
+      @students.each do |s|
+        cs = CourseStudent.new
+        cs.student_id = s.id
+        cs.course_id = @course.id
+        cs.ocena = 0
+        cs.save
+      end
+    end
+    @oceny = @course.course_students
   end
 
   # POST /courses or /courses.json
@@ -65,6 +83,6 @@ class CoursesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def course_params
-      params.require(:course).permit(:nazwa)
+      params.require(:course).permit(:nazwa, student_ids:[])
     end
 end

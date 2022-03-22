@@ -1,19 +1,26 @@
 <div id="<%= dom_id course %>">
-  <p>
-    <strong>Nazwa:</strong>
-    <%= course.nazwa %>
-  </p>
 
-  <p>
-    <strong>Grupy:</strong>
-    <% course.groups.each do |g| %>
-      <%= g.nazwa %>
-        <p>
-        <% g.students.each do |s| %>
-          <%= s.indeks %> <%= s.imie %> <%= s.nazwisko %><br>
-        <% end %>
-        </p>
-    <% end %>
-  </p>
+  <tr class="bg-light">
+    <td><%= course.nazwa %></td>
+    <td><%= link_to "Edycja", edit_course_path(course), class: "btn btn-primary btn-sm" %></td>
+  </tr>
+
+
+      <% course.groups.each do |g| %>
+      <tr>
+        <td>    <%= g.nazwa %></td>
+        <td>
+          <% g.students.each do |s| %>
+            <%= s.indeks %> <%= s.imie %> <%= s.nazwisko %><br>
+          <% end %>
+        </td>
+        <td><%= link_to "Oceny", courses_oceny_path(id: course.id, gr_id: g), class: "btn btn-primary btn-sm" %></td>
+      </tr>
+      <% end %>
+
+
+
+
+
 
 </div>

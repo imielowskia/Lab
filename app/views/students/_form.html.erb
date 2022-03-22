@@ -11,14 +11,14 @@
     </div>
   <% end %>
 
-
+  <div id='form_s'>
       <tr>
         <td><%= form.text_field :indeks %></td>
         <td><%= form.text_field :imie %></td>
         <td><%= form.text_field :nazwisko %></td>
         <td><%= form.collection_select :group_id, Group.all, :id, :nazwa,{}, {class: "form-select"} %></td>
-        <td><%= form.submit class: "btn btn-primary btn-sm" %></td>
+        <td><%= form.submit "Zapisz", class: "btn btn-primary btn-sm" %> </td>
       </tr>
-
+  </div>
 
 <% end %>

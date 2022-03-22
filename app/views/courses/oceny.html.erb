@@ -1,0 +1,8 @@
+<h1>Jestem</h1>
+
+<%= @course.nazwa %>
+<%= @group.nazwa %>
+
+<% @oceny.each do |o| %>
+  <%= o.student.imie %><%=o.student.nazwisko %>
+<% end %>

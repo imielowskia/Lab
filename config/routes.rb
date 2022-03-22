@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'courses/oceny'
   resources :courses
   resources :students
   resources :groups

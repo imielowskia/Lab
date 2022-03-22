@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_15_184230) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_22_173948) do
+  create_table "course_students", force: :cascade do |t|
+    t.integer "course_id", null: false
+    t.integer "student_id", null: false
+    t.integer "ocena", default: 0
+  end
+
   create_table "courses", force: :cascade do |t|
     t.string "nazwa"
     t.datetime "created_at", null: false
